@@ -3,15 +3,16 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout_Dashboard.cshtml";
 }
-
-<div class=" container">
+<h1 class="text-center">Category List</h1>
+<div class=" container ">
+    
     <div class="row">
-        <div class="col-8 offser-2">
-            <div class="float-right">
-                <a class="btn btn-sm btn-warnin m-1 p-1 border-2" asp-action="AddCategory" asp-controller="Category">Add Category</a>
+        <div class="col-8 offser-2 align-items-center">
+            <div class="float-end">
+                <a class="btn btn-sm btn-warning m-1 p-1" asp-action="AddCategory" asp-controller="Category">Add Category</a>
             </div>
             <table class=" table table-bordered table-hover text-center">
-                <thead>
+                <thead class="bg-dark text-light">
                     <tr>
                         <th>Category Id</th>
                         <th>Category Name</th>
@@ -25,9 +26,9 @@
                                 <td>@d.CategoryId</td>
                                 <td>@d.CategoryName</td>
                                 <td>
-                                    <a class="btn btn-sm btn-primary" asp-action="Edit" asp-controller="Category" asp-route-id="@d.CategoryId">Edit</a>
+                                    <a class="btn btn-sm btn-primary" asp-action="AddCategory" asp-controller="Category" asp-route-id="@d.CategoryId">Edit</a>
                                     <a class="btn btn-sm btn-info" asp-action="Details" asp-controller="Category" asp-route-id="@d.CategoryId">Details</a>
-                                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-controller="Category" asp-route-id="@d.CategoryId">Delete</a>
+                                    <a class="btn btn-sm btn-danger" asp-action="Delete" onclick="return confirm " asp-controller="Category" asp-route-id="@d.CategoryId">Delete</a>
                                 </td>
                             </tr>
                         }

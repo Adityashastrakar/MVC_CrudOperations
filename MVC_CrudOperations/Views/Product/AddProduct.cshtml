@@ -1,0 +1,33 @@
+﻿@model MVC_CrudOperations.Models.Product
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_Layout_Dashboard.cshtml";
+}
+
+<h1>AddProduct</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="card-hearder">
+                <h2 class="text-info text-center">Add Product</h2>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-action="AddCategory">
+                    <div class="form-group">
+                        <label asp-for="ProductName"> </label>
+                        <input type="text" class="form-control" placeholder="Enter Product" autocomplete="off" asp-for="ProductName" />
+                        <span class="text-danger" asp-validation-for="ProductName"></span>
+                        <label asp-for="Category.CategoryName"> </label>
+                        <input type="text" class="form-control" placeholder="Enter Category ID" autocomplete="off" asp-for="Category.CategoryName" />
+                        <span class="text-danger" asp-validation-for="Category.CategoryName"></span>
+                    </div>
+                    <div class"">
+                        <input type="submit" class="btn btn-sm btn-primary m-2 p-2" style="float-end" value="SUBMIT" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

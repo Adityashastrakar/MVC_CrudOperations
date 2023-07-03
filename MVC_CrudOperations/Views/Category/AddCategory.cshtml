@@ -1,0 +1,42 @@
+﻿@model MVC_CrudOperations.Models.Category
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/Shared/_Layout_Dashboard.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="card-hearder">
+               @if(Model.CategoryId==0)
+                {
+                    <h2 class="text-info text-center">Add Category</h2>
+                }
+                else
+                {
+                    <h2 class="text-info text-center">Update Category</h2>
+                }
+            </div>
+            <div class="card-body">
+                <form method="post" asp-action="AddCategory">
+                   <div class="form-group">
+                        <label asp-for="CategoryName"> </label>
+                        <input type="text" class="form-control" placeholder="Enter Category" autocomplete="off" asp-for="CategoryName" />
+                        <input type="hidden" asp-for="CategoryId"/>
+                        <span class="text-danger" asp-validation-for="CategoryName"></span>
+                   </div>
+                   <div class"">
+                       @if(Model.CategoryId==0)
+                        {
+                            <input type="submit" class="btn btn-sm btn-primary m-2 p-2" style="float-end" value="SUBMIT" />
+                        }
+                        else
+                        {
+                            <input type="submit" class="btn btn-sm btn-primary m-2 p-2" style="float-end" value="UPDATE" />
+                        }
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,11 +3,15 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 class="text-center ">Products</h1>
 
+<h1 class="text-center">Products</h1>
 <div class="container">
+    
     <div class=" row">
         <div class="col-8 offset-2">
+            <div class="float-end">
+                <a class="btn btn-sm btn-warning m-1 p-1" asp-action="AddProduct" asp-controller="Product">Add Product</a>
+            </div>
             <table class="table table-bordered text-center">
                 <thead class="bg-dark text-light">
                     <tr>

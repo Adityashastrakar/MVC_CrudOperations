@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVC_CrudOperations.Data;
+using MVC_CrudOperations.Models;
 using MVC_CrudOperations.Models.ViewModel;
 
 namespace MVC_CrudOperations.Controllers
@@ -20,5 +21,22 @@ namespace MVC_CrudOperations.Controllers
             prd.categories = catData;
             return View(prd);
         }
+       
+
+        [HttpPost]
+
+        public async Task<IActionResult> AddProduct()
+        {
+            ViewBag.department = context.Products.ToList();
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddProduct(ProductCategoryListViewModel productCategory)
+        {
+            return View();
+        }
     }
 }
+
+    
+
