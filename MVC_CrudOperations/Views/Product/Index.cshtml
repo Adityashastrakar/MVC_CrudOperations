@@ -1,0 +1,40 @@
+﻿@model MVC_CrudOperations.Models.ViewModel.ProductCategoryListViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center ">Products</h1>
+
+<div class="container">
+    <div class=" row">
+        <div class="col-8 offset-2">
+            <table class="table table-bordered text-center">
+                <thead class="bg-dark text-light">
+                    <tr>
+                      <th>Product Id</th>
+                      <th>Product Name</th>
+                      <th>Category Id</th>
+                      <th>Category Name</th>
+                      <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.products)
+                    {
+                        <tr>
+                            <td>@product.ProductId</td>
+                            <td>@product.ProductName</td>
+                            <td>@product.CategoryId</td>
+                            <td>@product.Category.CategoryName</td>
+                            <td>
+                                <a class="btn btn-sm btn-primary" asp-action="" asp-controller="Product" asp-route-id="@product.ProductId">Edit</a>
+                                <a class="btn btn-sm btn-danger" asp-action="" asp-controller="Product" asp-route-id="@product.ProductId">Delete</a>
+                                <a class="btn btn-sm btn-warning" asp-action="" asp-controller="Product" asp-route-id="@product.ProductId">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
