@@ -16,3 +16,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.icon{
+    margin-top:20px;
+    font-size:unset;
+
+}
+.icon a:hover{
+    color:darkslateblue;
+    font-size:60px;
+    transition:1s ease-in-out;
+}
